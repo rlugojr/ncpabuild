@@ -1,7 +1,7 @@
 PYTHONTAR = 'cpython-ee0034434e65'
 PYTHONVER = 'python3.5'
 GITREPO = 'https://github.com/NagiosEnterprises/ncpa.git'
-REPOTGT = '~/Development/ncpa'
+REPOTGT = ~/Development/ncpa
 
 .PHONY: python cx_freeze pull_repo
 
