@@ -5,6 +5,8 @@ REPOTGT = '~/Development/ncpa'
 
 .PHONY: python cx_freeze pull_repo
 
+all: python cx_freeze pull_repo
+
 python:
 	tar xf $(PYTHONTAR).tar.bz2
 	cd $(PYTHONTAR) && ./configure --enable-shared && make && make altinstall
