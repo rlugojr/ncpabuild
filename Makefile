@@ -1,21 +1,24 @@
-PYTHONTAR = 'cpython-ee0034434e65'
-PYTHONVER = 'python3.5'
-GITREPO = 'https://github.com/NagiosEnterprises/ncpa.git'
+PYTHONTAR = Python-2.7.6
+PYTHONVER = python2.7
+GITREPO = https://github.com/NagiosEnterprises/ncpa.git
 REPOTGT = ~/Development/ncpa
 
-.PHONY: python cx_freeze pull_repo
+.PHONY: python pip cx_freeze pull_repo
 
-all: python cx_freeze pull_repo
+all: python pip cx_freeze pull_repo
 
 python:
-	tar xf $(PYTHONTAR).tar.bz2
-	cd $(PYTHONTAR) && ./configure --enable-shared && make && make altinstall
+	tar xf $(PYTHONTAR).tgz
+	cd $(PYTHONTAR) && ./configure --with-zlib=/usr/include --enable-shared && make && make altinstall
 	echo '/usr/local/lib' >> /etc/ld.so.conf 
 	ldconfig
 
+pip:
+	cd /tmp && wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py && python2.7 /tmp/get-pip.py
+
 cx_freeze:
-	tar xf cx_Freeze.tar.bz2
-	cd cx_Freeze && $(PYTHONVER) setup.py install
+	tar xf cx_Freeze-4.3.2.tar.gz
+	cd cx_Freeze-4.3.2 && $(PYTHONVER) setup.py install
 
 pull_repo:
 	git clone $(GITREPO) $(REPOTGT)
