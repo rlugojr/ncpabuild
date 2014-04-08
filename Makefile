@@ -4,9 +4,9 @@ CXFREEZEVER = cx_Freeze-4.3.2
 GITREPO = https://github.com/NagiosEnterprises/ncpa.git
 REPOTGT = ~/Development/ncpa
 
-.PHONY: python pip cx_freeze pull_repo
+.PHONY: python pip cx_freeze pull_repo make_user_group
 
-all: python pip cx_freeze pull_repo
+all: python pip cx_freeze pull_repo make_user_group
 
 python:
 	tar xf $(PYTHONTAR).tgz
@@ -27,3 +27,7 @@ pull_repo:
 clean:
 	rm -rf $(PYTHONTAR)
 	rm -rf $(CXFREEZEVER)
+
+make_user_group:
+	test `useradd nagios` || /bin/true
+	test `groupadd nagcmd` || /bin/true
