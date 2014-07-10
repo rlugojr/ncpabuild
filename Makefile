@@ -1,6 +1,7 @@
 PYTHONTAR = Python-2.7.6
 PYTHONVER = python2.7
 CXFREEZEVER = cx_Freeze-4.3.2
+PYTHONBIN = /usr/local/bin/python2.7
 GITREPO = https://github.com/NagiosEnterprises/ncpa.git
 REPOTGT = ~/Development/ncpa
 
@@ -15,11 +16,11 @@ python:
 	ldconfig
 
 pip:
-	cd /tmp && wget --no-check-certificate https://raw.github.com/pypa/pip/master/contrib/get-pip.py && /usr/local/bin/python2.7 /tmp/get-pip.py
+	cd /tmp && wget --no-check-certificate https://raw.github.com/pypa/pip/master/contrib/get-pip.py && $(PYTHONBIN) /tmp/get-pip.py
 
 cx_freeze:
 	tar xf $(CXFREEZEVER).tar.gz
-	cd $(CXFREEZEVER) && $(PYTHONVER) setup.py install
+	cd $(CXFREEZEVER) && $(PYTHONBIN) setup.py install
 
 pull_repo:
 	git clone $(GITREPO) $(REPOTGT)
