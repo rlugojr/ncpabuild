@@ -2,7 +2,7 @@ PYTHONTAR = Python-2.7.6
 PYTHONVER = python2.7
 CXFREEZEVER = cx_Freeze-4.3.2
 PYTHONBIN = /usr/local/bin/python2.7
-GITREPO = https://github.com/NagiosEnterprises/ncpa.git
+GITREPO = https://github.com/scot0357/ncpa.git
 REPOTGT = ~/Development/ncpa
 
 .PHONY: python pip cx_freeze pull_repo make_user_group test_rpmbuild
