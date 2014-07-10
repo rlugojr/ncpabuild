@@ -15,7 +15,7 @@ python:
 	ldconfig
 
 pip:
-	cd /tmp && wget --no-check-certificate https://raw.github.com/pypa/pip/master/contrib/get-pip.py && python2.7 /tmp/get-pip.py
+	cd /tmp && wget --no-check-certificate https://raw.github.com/pypa/pip/master/contrib/get-pip.py && /usr/local/bin/python2.7 /tmp/get-pip.py
 
 cx_freeze:
 	tar xf $(CXFREEZEVER).tar.gz
