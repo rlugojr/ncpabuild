@@ -13,7 +13,7 @@ python:
 	tar xf $(PYTHONTAR).tgz
 	cd $(PYTHONTAR) && ./configure --with-zlib=/usr/include --enable-shared && make && make altinstall
 	echo '/usr/local/lib' >> /etc/ld.so.conf 
-	ldconfig
+	/sbin/ldconfig
 
 pip:
 	cd /tmp && wget --no-check-certificate https://raw.github.com/pypa/pip/master/contrib/get-pip.py && $(PYTHONBIN) /tmp/get-pip.py
