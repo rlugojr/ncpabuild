@@ -1,6 +1,6 @@
 if uname -a | grep -i 'Debian';
 then
-	apt-get install debian-builder rpm gcc git wget openssl libssl-dev -y
+	apt-get install debian-builder rpm gcc git wget openssl libssl-dev alien -y
 elif uname -a | grep -i 'Darwin';
 then
 	echo "must be installed manually"
