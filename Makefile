@@ -5,7 +5,7 @@ PYTHONBIN = /usr/local/bin/python2.7
 GITREPO = https://github.com/NagiosEnterprises/ncpa.git
 REPOTGT = ~/Development/ncpa
 
-.PHONY: python pip cx_freeze pull_repo make_user_group test_rpmbuild
+.PHONY: python pip cx_freeze pull_repo make_user_group copy_scripts test_rpmbuild
 
 all: python pip cx_freeze pull_repo make_user_group test_rpmbuild
 
@@ -32,6 +32,9 @@ clean:
 make_user_group:
 	test `useradd nagios` || /bin/true
 	test `groupadd nagcmd` || /bin/true
+	
+copy_scripts:
+	cp -f autobuild.sh /root
 
 test_rpmbuild:
 	test `which rpmbuild` || echo 'You need to install rpmbuild.'
