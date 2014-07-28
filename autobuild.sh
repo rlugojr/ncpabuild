@@ -1,4 +1,7 @@
-if uname -a | grep -i 'Debian|Ubuntu';
+if uname -a | grep -i 'Debian';
+then
+    PACKAGE='deb'
+elif uname -a | grep -i 'Ubuntu';
 then
     PACKAGE='deb'
 elif uname -a | grep -i 'Darwin';
@@ -19,7 +22,7 @@ TARGET="/mnt/smbshare/ncpastaging/posix/${PACKAGE}/${ARCH}/"
 
 (
     cd /root/Development/ncpa/build
-    make build_rpm
+    make build_${PACKAGE}
     /bin/cp *.${PACKAGE} "${TARGET}"
     make clean
 )
