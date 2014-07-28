@@ -3,7 +3,7 @@ then
 	apt-get install debian-builder rpm gcc git wget openssl libssl-dev -y
 elif uname -a | grep -i 'Darwin';
 then
-	
+	echo "must be installed manually"
 elif uname -a | grep -i 'el5';
 then
 	yum install gcc zlib zlib-devel openssl openssl-devel rpm-build -y
