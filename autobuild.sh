@@ -18,11 +18,18 @@ else
     ARCH='x86_64'
 fi
 
-TARGET="/mnt/smbshare/ncpastaging/posix/${PACKAGE}/${ARCH}/"
-
 (
-    cd /root/Development/ncpa/build
-    make build_${PACKAGE}
-    /bin/cp *.${PACKAGE} "${TARGET}"
-    make clean
+    if [ $PACKAGE == 'dmg' ]; then
+        cd /Users/techteam/Development/ncpa/build
+        sudo make build_${PACKAGE}
+        sudo /bin/cp *.${PACKAGE} "/Volumes/teamshare/ncpastaging/posix/${PACKAGE}/${ARCH}/"
+        sudo make clean
+    else
+        cd /root/Development/ncpa/build
+        make build_${PACKAGE}
+        /bin/cp *.${PACKAGE} "/mnt/smbshare/ncpastaging/posix/${PACKAGE}/${ARCH}/"
+        make clean
+    fi
 )
+
+echo "Build successful! Saved in NCPA staging area."
