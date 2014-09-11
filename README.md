@@ -6,7 +6,7 @@ A package of scripts and tarballs for installing an NCPA build box.
 
 Windows builds
 ---------
-To build on windows you must install ActivePython 2.7 and the following pip components for python:
+To build on windows you must install **ActivePython 2.7** and the following pip components for python:
 <pre>
 cx-Freeze
 cx-Logging
@@ -32,4 +32,4 @@ virtualenv
 Werkzeug
 wsgiref
 </pre>
-You must also install NSIS 2.46 (http://nsis.sourceforge.net/Download)
+You must also install **NSIS 2.46** (http://nsis.sourceforge.net/Download)
