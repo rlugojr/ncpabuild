@@ -38,3 +38,13 @@ virtualenv
 Werkzeug
 wsgiref
 </pre>
+
+Windows fixes for cx_Freeze patching
+--------
+Just like in the linux build boxes we need to patch cx_Freeze to work with gevent properly... Open up your cx_Freeze which should be located in <code>C:\Python27\Lib\site-packages\cx_Freeze\freezer.py</code> and around line 24 where there is an import, replace the one line import with these three lines:
+
+<pre>
+imp = __import__("imp")
+sys = __import__("sys")
+os = __import__("os")
+</pre>
