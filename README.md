@@ -32,3 +32,4 @@ virtualenv
 Werkzeug
 wsgiref
 </pre>
+You must also install NSIS 2.46 (http://nsis.sourceforge.net/Download)
