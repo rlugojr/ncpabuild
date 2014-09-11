@@ -6,6 +6,9 @@ A package of scripts and tarballs for installing an NCPA build box.
 
 Windows builds
 ---------
+**OpenSSL for Windows** Download the latest OpenSSL and VS 2008 distributable packages (https://www.openssl.org/related/binaries.html)
+**VS 2008 Distributable** Available from the same link above
+**NSIS 2.46** (http://nsis.sourceforge.net/Download)
 To build on windows you must install **ActivePython 2.7** and the following pip components for python:
 <pre>
 cx-Freeze
@@ -32,4 +35,3 @@ virtualenv
 Werkzeug
 wsgiref
 </pre>
-You must also install **NSIS 2.46** (http://nsis.sourceforge.net/Download)
