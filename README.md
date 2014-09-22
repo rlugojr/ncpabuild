@@ -12,7 +12,7 @@ Windows builds
 <br>
 **NSIS 2.46** (http://nsis.sourceforge.net/Download)
 <br></br>
-Install **ActivePython 2.7** and the following pip components for python:
+Install **Python 2.7.x** and the following pip components for python:
 <pre>
 cx-Freeze
 cx-Logging
