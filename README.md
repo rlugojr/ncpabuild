@@ -15,19 +15,14 @@ Windows builds
 Install **Python 2.7.x** and the following pip components for python:
 <pre>
 cx-Freeze
-docutils
 Flask
 gevent
 gevent-websocket
 greenlet
-Jinja2
 MarkupSafe
 psutil
 Pygments
 pyOpenSSL
-pypm
-pythonselect
-pywin32
 requests
 setuptools
 Sphinx
