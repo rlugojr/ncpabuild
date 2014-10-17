@@ -15,8 +15,6 @@ Windows builds
 Install **Python 2.7.x** and the following pip components for python:
 <pre>
 cx-Freeze
-cx-Logging
-cx-PyGenLib
 docutils
 Flask
 gevent
