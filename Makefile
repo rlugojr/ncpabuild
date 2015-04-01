@@ -19,7 +19,7 @@ pip:
 	cd /tmp && wget --no-check-certificate https://raw.github.com/pypa/pip/master/contrib/get-pip.py && $(PYTHONBIN) /tmp/get-pip.py
 
 cx_freeze:
-	tar xf $(CXFREEZEVER).tar.gz
+	tar xf $(CXFREEZEVER)-patched.tar.gz
 	cd $(CXFREEZEVER) && $(PYTHONBIN) setup.py install
 
 pull_repo:
