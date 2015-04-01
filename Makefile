@@ -1,7 +1,7 @@
 PYTHONTAR = Python-2.7.8
-PYTHONVER = python2.7
+PYTHONVER = python2.7.8
 CXFREEZEVER = cx_Freeze-4.3.4-patched
-PYTHONBIN = /usr/local/bin/python2.7
+PYTHONBIN = /usr/local/bin/python2.7.8
 GITREPO = https://github.com/NagiosEnterprises/ncpa.git
 REPOTGT = ~/Development/ncpa
 
