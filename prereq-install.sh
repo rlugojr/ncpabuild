@@ -10,6 +10,9 @@ then
 elif  uname -a | grep -i 'el6';
 then
 	yum install gcc zlib zlib-devel openssl openssl-devel rpm-build wget -y
+elif  uname -a | grep -i 'el7';
+then
+	yum install gcc zlib zlib-devel openssl openssl-devel rpm-build wget -y
 else
 	echo "Could not determine your OS type... you need to install the following dependencies:"
 	echo ""
