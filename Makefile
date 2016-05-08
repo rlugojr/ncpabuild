@@ -1,4 +1,4 @@
-PYTHONTAR = Python-2.7.8
+PYTHONTAR = Python-2.7.11
 PYTHONVER = python2.7
 CXFREEZEVER = cx_Freeze-4.3.4
 PYTHONBIN = /usr/local/bin/python2.7
@@ -16,7 +16,7 @@ python:
 	/sbin/ldconfig
 
 pip:
-	cd /tmp && wget --no-check-certificate https://raw.github.com/pypa/pip/master/contrib/get-pip.py && $(PYTHONBIN) /tmp/get-pip.py
+	cd /tmp && wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py && $(PYTHONBIN) /tmp/get-pip.py
 
 cx_freeze:
 	tar xf $(CXFREEZEVER)-patched.tar.gz
