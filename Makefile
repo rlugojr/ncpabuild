@@ -5,9 +5,9 @@ PYTHONBIN = /root/p27n/bin/python2.7
 GITREPO = https://github.com/NagiosEnterprises/ncpa.git
 REPOTGT = ~/Development/ncpa
 
-.PHONY: python pip cx_freeze pull_repo make_user_group copy_scripts test_rpmbuild
+.PHONY: python pip prereqs pull_repo make_user_group copy_scripts test_rpmbuild
 
-all: python pip cx_freeze pull_repo make_user_group test_rpmbuild
+all: python pip prereqs pull_repo make_user_group test_rpmbuild
 
 python:
 	tar xf $(PYTHONTAR).tgz
@@ -18,9 +18,8 @@ python:
 pip:
 	cd /tmp && wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py && $(PYTHONBIN) /tmp/get-pip.py
 
-cx_freeze:
-	tar xf $(CXFREEZEVER)-patched.tar.gz
-	cd $(CXFREEZEVER) && $(PYTHONBIN) setup.py install
+prereqs:
+	$(PYTHONBIN) -m pip install gevent gevent-websocket flask jinja2 requests pyOpenSSL sphinx docutils sphinx-bootstrap-theme psutil
 
 pull_repo:
 	git clone $(GITREPO) $(REPOTGT)
