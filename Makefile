@@ -1,7 +1,7 @@
 PYTHONTAR = Python-2.7.11
 PYTHONVER = python2.7
 CXFREEZEVER = cx_Freeze-4.3.4
-PYTHONBIN = /root/p27n/bin/python2.7
+PYTHONBIN = /usr/local/bin/python2.7
 GITREPO = https://github.com/NagiosEnterprises/ncpa.git
 REPOTGT = ~/Development/ncpa
 
@@ -11,7 +11,7 @@ all: python pip prereqs pull_repo make_user_group test_rpmbuild
 
 python:
 	tar xf $(PYTHONTAR).tgz
-	cd $(PYTHONTAR) && ./configure --with-zlib=/usr/include --prefix=/root/p27n --enable-shared && make && make altinstall
+	cd $(PYTHONTAR) && ./configure --with-zlib=/usr/include --enable-shared && make && make altinstall
 	echo '/usr/local/lib' >> /etc/ld.so.conf 
 	/sbin/ldconfig
 
